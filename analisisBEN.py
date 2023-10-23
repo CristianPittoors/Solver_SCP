@@ -27,7 +27,7 @@ incluye_sca = False
 bd = BD()
 
 instancias = bd.obtenerInstancias(f'''
-                                  "F1","F2"
+                                  "F1"
                                   ''')
 print(instancias)
 for instancia in instancias:

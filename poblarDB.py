@@ -4,8 +4,8 @@ import json
 bd = BD()
 
 
-scp = False
-ben = True
+scp = True
+ben = False
 mhs = ['WOA','GWO']
 cantidad = 0
 
@@ -44,7 +44,7 @@ if scp:
         for mh in mhs:
             data = {}
             data['MH']          = mh
-            data['paramMH']     = f'iter:{str(iteraciones)},pop:{str(poblacion)},DS:Z4-COM,repair:complex,cros:0.9;mut:0.20'
+            data['paramMH']     = f'iter:{str(iteraciones)},pop:{str(poblacion)},DS:S4-COM,repair:complex,cros:0.9;mut:0.20'
             data['ML']          = ''
             data['paramML']     = ''
             data['ML_FS']       = ''
@@ -57,7 +57,7 @@ if scp:
 if ben:
     # poblar ejecuciones Benchmark
     instancias = bd.obtenerInstancias(f'''
-                                      "F1","F2"
+                                      "F1"
                                       ''')
     iteraciones = 500
     experimentos = 3 
