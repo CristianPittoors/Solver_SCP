@@ -4,8 +4,8 @@ import json
 bd = BD()
 
 
-scp = True
-ben = False
+scp = False
+ben = True
 mhs = ['WOA','GWO']
 cantidad = 0
 
