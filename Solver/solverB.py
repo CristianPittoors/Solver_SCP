@@ -7,6 +7,7 @@ from Metaheuristics.GWO import iterarGWO
 from Metaheuristics.PSA import iterarPSA
 from Metaheuristics.SCA import iterarSCA
 from Metaheuristics.WOA import iterarWOA
+from Metaheuristics.EOO import iterarEOO
 from util import util
 from BD.sqlite import BD
 import os
@@ -96,6 +97,8 @@ def solverB(id, mh, maxIter, pop, function, lb, ub, dim):
             poblacion = iterarWOA(maxIter, iter, dim, poblacion.tolist(), Best.tolist())
         if mh == 'PSA':
             poblacion = iterarPSA(maxIter, iter, dim, poblacion.tolist(), Best.tolist())
+        if mh == 'EOO':
+            poblacion = iterarEOO(maxIter, iter, dim, poblacion.tolist(), Best.tolist())
         
         # calculo de factibilidad de cada individuo y calculo del fitness inicial
         for i in range(poblacion.__len__()):
